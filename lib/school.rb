@@ -3,8 +3,15 @@
 require "pry"
 class School
 
-attr_accessor :roster, :students
+attr_reader :roster
 
+  # def roster
+  #   @roster
+  # end
+  #
+  # def roster=(value)
+  #   @roster=value
+  # end
 
   def initialize(name, roster={})
     @school=name
@@ -13,22 +20,25 @@ attr_accessor :roster, :students
 
   def add_student(name,number)
     #binding.pry
-
-    if @roster[number] == nil
-      @roster[number] = [name]
+    if self.roster[number] == nil
+      self.roster[number] = [name]
     else
-      @roster[number]<<name
+      self.roster[number]<<name
     end
   end
 
   def grade(grade)
-    @roster[grade]
+    self.roster[grade]
   end
 
   def sort
-    @roster.each {|grade,students| @roster[grade]=students.sort}
-    @roster.sort_by{|key| key}.to_h
+    self.roster.each {|grade,students| self.roster[grade]=students.sort}
+    self.roster.sort_by{|key| key}.to_h
 
   end
 
 end
+
+# binding.pry
+#
+# "HI"
