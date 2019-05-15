@@ -22,7 +22,7 @@ class School
     #takes in a student's grade as an argument
     roster[stu_grade]
     #returns all the students in a particular grade
-    binding.pry
+    #binding.pry
   end
 
   def sort
